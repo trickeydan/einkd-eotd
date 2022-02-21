@@ -1,6 +1,5 @@
 """Example code for the epd2in13bc driver."""
 import argparse
-from lib2to3.pgen2.driver import Driver
 import logging
 from time import sleep
 from typing import Dict
@@ -10,6 +9,7 @@ from emoji.unicode_codes import EMOJI_UNICODE_ENGLISH
 from PIL import Image
 
 from einkd.display import Display
+from einkd.drivers.base import BaseDriver
 from einkd.gui.components import ImageComponent, TextComponent
 from einkd.gui.window import Window
 
@@ -183,7 +183,7 @@ if __name__ == "__main__":
         )
 
     # Dynamically choose the display driver
-    driver: Driver
+    driver: BaseDriver
     if args.display == "epd2in13":
         from einkd.drivers.epd2in13bc import EPD2in13bcDriver
         driverr = EPD2in13bcDriver()
