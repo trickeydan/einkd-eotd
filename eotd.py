@@ -186,7 +186,7 @@ if __name__ == "__main__":
     driver: BaseDriver
     if args.display == "epd2in13":
         from einkd.drivers.epd2in13bc import EPD2in13bcDriver
-        driverr = EPD2in13bcDriver()
+        driver = EPD2in13bcDriver()
     elif args.display == "tk":
         from einkd.drivers.virtual import TkinterDriver
         driver = TkinterDriver((400, 200))
